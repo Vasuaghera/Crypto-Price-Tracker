@@ -1,0 +1,344 @@
+.spinner {
+    display: grid;
+    place-self: center;
+    min-height: 80vh;
+  }
+  
+  .spin {
+    width: 65px;
+    height: 65px;
+    place-self: center;
+    border: 5px solid #1a1a1a;
+    border-top-color: #0db29b;
+    border-radius: 50%;
+    animation: rotate 1.5s linear infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .coin {
+    padding: 2rem;
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .coin-name {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(13, 178, 155, 0.1);
+    border-radius: 12px;
+  }
+  
+  .coin-name img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+  }
+  
+  .coin-name p {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+  }
+  
+  .coin-name b {
+    color: #0db29b;
+  }
+  
+  .coin-chart {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    height: 400px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .coin-chart > div {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .recharts-line-curve {
+    stroke: #0db29b !important;
+    stroke-width: 2px !important;
+  }
+  
+  .recharts-dot {
+    fill: #0db29b !important;
+  }
+  
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .recharts-xAxis line,
+  .recharts-yAxis line {
+    stroke: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .recharts-text {
+    fill: white !important;
+    font-size: 12px !important;
+  }
+  
+  .coin-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .coin-info ul {
+    list-style: none;
+    padding: 1.5rem;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .coin-info ul:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(13, 178, 155, 0.1);
+  }
+  
+  .coin-info li:first-child {
+    color: #0db29b;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .coin-info li:last-child {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .coin {
+      padding: 1rem;
+    }
+  
+    .coin-name {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .coin-chart {
+      height: 300px;
+      padding: 1rem;
+    }
+  
+    .coin-info {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .recharts-tooltip-wrapper {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid #0db29b !important;
+    border-radius: 4px !important;
+  }
+  
+  .recharts-default-tooltip {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+  }
+  
+  .recharts-tooltip-label {
+    color: #0db29b !important;
+  }
+  
+  .coin-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  
+  .coin-info ul {
+    list-style: none;
+    padding: 1.5rem;
+    margin: 0;
+    background: linear-gradient(145deg, rgba(13, 178, 155, 0.1), rgba(13, 178, 155, 0.05));
+    border: 1px solid rgba(13, 178, 155, 0.2);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .coin-info ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(13, 178, 155, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .coin-info ul:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(13, 178, 155, 0.15);
+    border-color: rgba(13, 178, 155, 0.4);
+  }
+  
+  .coin-info ul:hover::before {
+    opacity: 1;
+  }
+  
+  .coin-info li:first-child {
+    color: rgba(13, 178, 155, 0.9);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .coin-info li:last-child {
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .coin-info ul:hover li:last-child {
+    color: #0db29b;
+  }
+  
+  .coin-info ul::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(13, 178, 155, 0.1),
+      transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+  }
+  
+  .coin-info ul:hover::after {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .coin-info {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+  
+    .coin-info li:last-child {
+      font-size: 1.15rem;
+    }
+  
+    .coin-info li:first-child {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .coin-info {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .spinner {
+    display: grid;
+    place-items: center;
+    min-height: 80vh;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .spin {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .spin::before,
+  .spin::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  
+  .spin::before {
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 178, 155, 0.15);
+    animation-delay: -0.5s;
+  }
+  
+  .spin::after {
+    width: 60%;
+    height: 60%;
+    background: #0db29b;
+    animation-delay: 0s;
+    box-shadow: 0 0 20px rgba(13, 178, 155, 0.5);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .spin-inner {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background: #0db29b;
+    border-radius: 50%;
+    z-index: 2;
+    animation: glow 1.8s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(13, 178, 155, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(13, 178, 155, 1);
+    }
+  }
+  

@@ -1,0 +1,198 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid #0db29b;
+    position: relative;
+  }
+  
+  .navbar .logo {
+    height: auto;
+    max-width: 150px;
+    width: 100%;
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  .navbar ul li {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #0db29b;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar ul li:hover {
+    color: #0db29b;
+  }
+  
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .navbar select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 2px solid #0db29b;
+    background: black;
+    color: white;
+  }
+  
+  .navbar option {
+    background: black;
+    color: white;
+  }
+  
+  .navbar button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    background: #0db29b;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background: white;
+    color: #0db29b;
+  }
+  
+  .navbar button img {
+    width: 15px;
+  }
+  
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  @media (max-width: 900px) {
+    .navbar {
+      padding: 10px 4%;
+    }
+  
+    .navbar ul {
+      gap: 20px;
+    }
+  
+    .navbar button {
+      gap: 8px;
+      padding: 6px 18px;
+      font-size: 13px;
+    }
+  
+    .hamburger-menu {
+      display: flex;
+    }
+  
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 20px;
+    }
+  
+    .navbar ul.show {
+      display: flex;
+    }
+  
+    .navbar ul li {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 3%;
+    }
+  
+    .navbar ul {
+      display: none;
+    }
+  
+    .navbar button img {
+      width: 12px;
+    }
+  
+    .navbar .logo {
+      max-width: 120px; 
+    }
+  }
+
+  .navbar button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #0db29b;
+    border: 2px solid #0db29b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background-color: white;
+    color: #0db29b;
+    border: 2px solid #0db29b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 178, 155, 0.4);
+  }
+  
+  .navbar button img {
+    display: none;
+  }
+  

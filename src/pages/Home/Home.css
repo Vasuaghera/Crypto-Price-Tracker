@@ -1,0 +1,195 @@
+/* Home.css */
+.home {
+    padding: 10px;
+    padding-bottom: 100px;
+    background-color: #000000;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .hero {
+    max-width: 600px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+  }
+  
+  .crypto-word {
+    color: #0db296;
+  }
+  
+  .hero h1 {
+    font-size: max(4vw, 36px);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .hero p {
+    width: 75%;
+    color: #e3e3e3;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .hero form {
+    padding: 10px;
+    width: 85%;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .hero input {
+    flex: 1;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    padding-left: 12px;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+  }
+  
+  .hero input:focus {
+    transform: scale(1.05);
+  }
+  
+  .hero button {
+    border: none;
+    background: #0db29b;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .hero button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .crypto-table {
+    max-width: 800px;
+    margin: auto;
+    background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.05));
+    border-radius: 15px;
+    border: 1px solid #333333;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+  }
+  
+  .table-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+    font-size: 15px;
+    color: #e0e0e0;
+    transition: transform 0.3s ease;
+  }
+  
+  .table-layout:hover {
+    background: rgba(0, 219, 155, 0.1);
+    transform: translateY(-5px);
+  }
+  
+  .market-cap {
+    text-align: right;
+  }
+  
+  .table-layout:last-child {
+    border: none;
+  }
+  
+  .table-layout div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .table-layout div img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  
+  .table-layout .green {
+    color: #00D515;
+    text-align: center;
+  }
+  
+  .table-layout .red {
+    color: #FF4646;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .table-layout {
+      grid-template-columns: 0.5fr 3fr 1fr 1fr;
+    }
+  
+    .market-cap {
+      display: none;
+    }
+  
+    .hero p {
+      width: 85%;
+    }
+  
+    .hero form {
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .table-layout div img {
+      width: 30px;
+    }
+  
+    .table-layout {
+      font-size: 12px;
+    }
+  
+    .hero form input {
+      width: 120px;
+    }
+  
+    .hero h1 {
+      font-size: max(5vw, 28px);
+    }
+  
+    .hero button {
+      font-size: 14px;
+      padding: 8px 20px;
+    }
+  }
+  
+  .noclasss {
+    color: #ffffff;
+  }
+  
+  /* Add FadeIn animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
