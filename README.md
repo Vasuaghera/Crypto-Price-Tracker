@@ -2,6 +2,13 @@
 
 This project is a simple **Crypto Price Tracking** application built using **React**. It allows users to view the top 10 cryptocurrencies, search for any cryptocurrency, and analyze its price and historical data by showing a chart. This project is a **frontend-only** project, so functionalities like signup, login, etc., are not operational.
 
+## Preview
+
+You can view the live version of this project here:
+
+[Crypto Price Tracker - Live Preview](https://crypto-price-tracker-chi.vercel.app)
+
+
 ## Features
 
 - **Home Screen**: Displays the top 10 cryptocurrencies with their current price.
