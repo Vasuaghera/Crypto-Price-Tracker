@@ -1,43 +1,43 @@
-// import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-// export const CoinContext = createContext();
+export const CoinContext = createContext();
 
-// const CoinContextProvider = (props)=>{
+const CoinContextProvider = (props)=>{
 
-//     const API_KEY = 'CG-L5Zr5RV9iqmCJGJFdx6gBZog'
+    const API_KEY = 'CG-L5Zr5RV9iqmCJGJFdx6gBZog'
 
-//     const [allCoin, setAllCoin] = useState([]);
-//     const [currency, setCurrency] = useState({
-//         name: "usd",
-//         symbol: "$"
-//     })
+    const [allCoin, setAllCoin] = useState([]);
+    const [currency, setCurrency] = useState({
+        name: "usd",
+        symbol: "$"
+    })
 
-//     const fetchAllCoin = async ()=>{
-//         const options = {
-//             method: 'GET',
-//             headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-L5Zr5RV9iqmCJGJFdx6gBZog'}
-//           };
+    const fetchAllCoin = async ()=>{
+        const options = {
+            method: 'GET',
+            headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-L5Zr5RV9iqmCJGJFdx6gBZog'}
+          };
           
-//           fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
-//             .then(res => res.json())
-//             .then(res => setAllCoin(res))
-//             .catch(err => console.error(err));
-//     }
+          fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
+            .then(res => res.json())
+            .then(res => setAllCoin(res))
+            .catch(err => console.error(err));
+    }
 
 
-// useEffect(()=>{
-//     fetchAllCoin();
-// },[currency])
+useEffect(()=>{
+    fetchAllCoin();
+},[currency])
 
-//     const contextValue = {
-//         allCoin, currency, setCurrency,API_KEY
-//     }
+    const contextValue = {
+        allCoin, currency, setCurrency,API_KEY
+    }
 
-//     return (
-//         <CoinContext.Provider value={contextValue}>
-//             {props.children}
-//         </CoinContext.Provider>
-//     )
-// }
+    return (
+        <CoinContext.Provider value={contextValue}>
+            {props.children}
+        </CoinContext.Provider>
+    )
+}
 
-// export default CoinContextProvider;
+export default CoinContextProvider;
